@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import axios from 'axios';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
   const [vnev, setVnev] = useState('');
   const [vcim, setVcim] = useState('');
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     try {
       const response = await axios.post('http://merlinvizsga.hu/api/pizza/vevo', { vnev, vcim });
+      console.log('Vevő rögzítve:', response.data);
       alert('Sikeresen rögzítve!');
       // Reset form
       setVnev('');
