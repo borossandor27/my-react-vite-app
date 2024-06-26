@@ -45,7 +45,7 @@ function App() {
             required
           />
         </div>
-        <button type="submit" className="btn btn-primary">Rögzít</button>
+        <button type="submit" className="btn btn-primary m-4">Rögzít</button>
       </form>
     </div>
   );
